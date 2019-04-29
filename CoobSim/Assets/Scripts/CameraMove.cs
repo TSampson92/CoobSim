@@ -9,6 +9,11 @@ public class CameraMove : MonoBehaviour {
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
+        }
+
         float xAxisValue = Input.GetAxis("Horizontal") * Speed;
         float zAxisValue = Input.GetAxis("Vertical") * Speed;
         float rotation = Input.GetAxis("Mouse ScrollWheel") * Speed;
